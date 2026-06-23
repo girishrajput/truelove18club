@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="TrueLove18Club International - Building Meaningful Human Connections Beyond Boundaries. Relationship Psychology, Emotional Wellness, and Community Platform." />
+    <meta name="theme-color" content="#E11D48" />
+
+    <title>TrueLove18Club International — Where Feelings Matter</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+
+    <!-- Google Fonts: Poppins & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome 6 (Free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <style>
+        /* ---- Custom Styles ---- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #0F172A;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
+        }
+
+        /* Dark Mode overrides via Tailwind dark: classes + custom */
+        body.dark {
+            background-color: #0B1120;
+            color: #F1F5F9;
+        }
+
+        /* Typography */
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Glassmorphism base */
+        .glass {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .dark .glass {
+            background: rgba(15, 23, 42, 0.6);
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+        .dark .glass-card {
+            background: rgba(15, 23, 42, 0.7);
+            border-color: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        .glass-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(225, 29, 72, 0.12);
+        }
+        .dark .glass-card:hover {
+            box-shadow: 0 16px 48px rgba(225, 29, 72, 0.2);
+        }
+
+        /* Header blur */
+        .header-blur {
+            background: rgba(255, 255, 255, 0.72);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .dark .header-blur {
+            background: rgba(11, 17, 32, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Hero gradient */
+        .hero-gradient {
+            background: linear-gradient(145deg, #fef2f2 0%, #fae8ff 50%, #fefce8 100%);
+        }
+        .dark .hero-gradient {
+            background: linear-gradient(145deg, #1a0b12 0%, #140b1f 50%, #1a1508 100%);
+        }
+
+        /* Soft gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #E11D48, #7C3AED);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-gold {
+            background: linear-gradient(135deg, #F59E0B, #FCD34D);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Button primary */
+        .btn-primary {
+            background: linear-gradient(135deg, #E11D48, #7C3AED);
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(225, 29, 72, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            transform: scale(1.04);
+            box-shadow: 0 8px 32px rgba(225, 29, 72, 0.4);
+        }
+        .btn-primary:active {
+            transform: scale(0.96);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #0F172A;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            border: 2px solid #E11D48;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .dark .btn-secondary {
+            color: #F1F5F9;
+            border-color: #7C3AED;
+        }
+        .btn-secondary:hover {
+            background: #E11D48;
+            color: #fff;
+            transform: scale(1.04);
+        }
+        .dark .btn-secondary:hover {
+            background: #7C3AED;
+            border-color: #7C3AED;
+        }
+
+        /* Stat counter */
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #E11D48, #7C3AED);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Pillar card icon */
+        .pillar-icon {
+            font-size: 2.4rem;
+            color: #E11D48;
+        }
+        .dark .pillar-icon {
+            color: #F59E0B;
+        }
+
+        /* Article filter tabs */
+        .filter-tab {
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: transparent;
+            border: 1px solid #e2e8f0;
+            color: #475569;
+        }
+        .dark .filter-tab {
+            border-color: #334155;
+            color: #94a3b8;
+        }
+        .filter-tab.active {
+            background: linear-gradient(135deg, #E11D48, #7C3AED);
+            color: #fff;
+            border-color: transparent;
+        }
+        .filter-tab:hover:not(.active) {
+            border-color: #E11D48;
+            color: #E11D48;
+        }
+        .dark .filter-tab:hover:not(.active) {
+            border-color: #7C3AED;
+            color: #F1F5F9;
+        }
+
+        /* Masonry gallery */
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+        .masonry-grid .masonry-item {
+            border-radius: 1.2rem;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+        .masonry-grid .masonry-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            display: block;
+        }
+        .masonry-grid .masonry-item:hover img {
+            transform: scale(1.06);
+        }
+        .masonry-grid .masonry-item .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 1rem;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        .masonry-grid .masonry-item:hover .overlay {
+            opacity: 1;
+        }
+
+        /* Testimonial slider */
+        .testimonial-slider {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            padding: 0.5rem 0.25rem 1.5rem;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .testimonial-slider::-webkit-scrollbar {
+            height: 4px;
+        }
+        .testimonial-slider::-webkit-scrollbar-thumb {
+            background: #E11D48;
+            border-radius: 9999px;
+        }
+        .testimonial-slider .testimonial-card {
+            flex: 0 0 300px;
+            scroll-snap-align: start;
+            padding: 1.5rem;
+            border-radius: 1.5rem;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        .dark .testimonial-slider .testimonial-card {
+            background: rgba(15, 23, 42, 0.7);
+            border-color: rgba(255, 255, 255, 0.06);
+        }
+        .testimonial-slider .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        }
+        .dark .testimonial-slider .testimonial-card:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Podcast player mock */
+        .podcast-wave {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            height: 40px;
+        }
+        .podcast-wave span {
+            display: block;
+            width: 4px;
+            background: #E11D48;
+            border-radius: 4px;
+            animation: wave 1.2s ease-in-out infinite;
+        }
+        .podcast-wave span:nth-child(2) {
+            animation-delay: 0.1s;
+            height: 24px;
+        }
+        .podcast-wave span:nth-child(3) {
+            animation-delay: 0.2s;
+            height: 36px;
+        }
+        .podcast-wave span:nth-child(4) {
+            animation-delay: 0.3s;
+            height: 18px;
+        }
+        .podcast-wave span:nth-child(5) {
+            animation-delay: 0.4s;
+            height: 30px;
+        }
+        .podcast-wave span:nth-child(6) {
+            animation-delay: 0.5s;
+            height: 40px;
+        }
+        .podcast-wave span:nth-child(7) {
+            animation-delay: 0.6s;
+            height: 22px;
+        }
+        .podcast-wave span:nth-child(8) {
+            animation-delay: 0.7s;
+            height: 34px;
+        }
+        .podcast-wave span:nth-child(9) {
+            animation-delay: 0.8s;
+            height: 16px;
+        }
+        .podcast-wave span:nth-child(10) {
+            animation-delay: 0.9s;
+            height: 28px;
+        }
+
+        @keyframes wave {
+            0%,
+            100% {
+                transform: scaleY(0.4);
+            }
+            50% {
+                transform: scaleY(1);
+            }
+        }
+
+        /* Back to top */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #E11D48, #7C3AED);
+            color: #fff;
+            border: none;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 20px rgba(225, 29, 72, 0.35);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .back-to-top:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 32px rgba(225, 29, 72, 0.5);
+        }
+
+        /* Newsletter success */
+        .newsletter-success {
+            display: none;
+            animation: fadeUp 0.5s ease;
+        }
+        .newsletter-success.show {
+            display: flex;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Dark mode toggle */
+        .dark-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            color: #0F172A;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .dark .dark-toggle {
+            color: #F1F5F9;
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .dark-toggle:hover {
+            background: rgba(225, 29, 72, 0.15);
+            transform: rotate(12deg);
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(24px);
+            z-index: 1000;
+            padding: 2rem 1.5rem;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            overflow-y: auto;
+        }
+        .dark .mobile-menu {
+            background: rgba(11, 17, 32, 0.96);
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        .mobile-menu a {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #0F172A;
+            text-decoration: none;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: color 0.2s;
+        }
+        .dark .mobile-menu a {
+            color: #F1F5F9;
+            border-bottom-color: rgba(255, 255, 255, 0.05);
+        }
+        .mobile-menu a:hover {
+            color: #E11D48;
+        }
+        .mobile-menu .close-btn {
+            align-self: flex-end;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #0F172A;
+        }
+        .dark .mobile-menu .close-btn {
+            color: #F1F5F9;
+        }
+
+        /* Utility */
+        .section-padding {
+            padding: 5rem 0;
+        }
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 7rem 0;
+            }
+        }
+
+        .container-custom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Scroll reveal tweaks */
+        [data-aos] {
+            pointer-events: none;
+        }
+        [data-aos].aos-animate {
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ===== MOBILE MENU ===== -->
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+        <button class="close-btn" id="mobileMenuClose" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="#home" class="mobile-nav-link">Home</a>
+        <a href="#about" class="mobile-nav-link">About</a>
+        <a href="#podcast" class="mobile-nav-link">Podcast</a>
+        <a href="#articles" class="mobile-nav-link">Articles</a>
+        <a href="#community" class="mobile-nav-link">Community</a>
+        <a href="#membership" class="mobile-nav-link">Membership</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
+        <a href="#membership" class="btn-primary text-center mt-2">Join Community</a>
+    </div>
+
+    <!-- ===== STICKY HEADER ===== -->
+    <header class="fixed top-0 left-0 w-full z-50 header-blur transition-colors duration-300" id="mainHeader">
+        <div class="container-custom flex items-center justify-between h-[68px] md:h-[76px]">
+            <!-- Logo -->
+            <a href="#home" class="flex items-center gap-2 text-xl font-bold font-poppins tracking-tight text-[#0F172A] dark:text-white no-underline">
+                <span class="text-[#E11D48] text-2xl">❤️</span>
+                TrueLove<span class="text-[#E11D48]">18</span>Club
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-[#475569] dark:text-[#94a3b8]">
+                <a href="#home" class="hover:text-[#E11D48] dark:hover:text-[#F59E0B] transition">Home</a>
+                <a href="#about" class="hover:text-[#E11D48] dark:hover:text-[#F59E0B] transition">About</a>
+                <a href="#podcast" class="hover:text-[#E11D48] dark:hover:text-[#F59E0B] transition">Podcast</a>
+                <a href="#articles" class="hover:text-[#E11D48] dark:hover:text-[#F59E0B] transition">Articles</a>
+                <a href="#community" class="hover:text-[#E11D48] dark:hover:text-[#F59E0B] transition">Community</a>
+                <a href="#membership" class="hover:text-[#E11D48] dark:hover:text-[#F59E0B] transition">Membership</a>
+                <a href="#contact" class="hover:text-[#E11D48] dark:hover:text-[#F59E0B] transition">Contact</a>
+            </nav>
+
+            <!-- Right actions -->
+            <div class="flex items-center gap-3">
+                <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon" id="darkIcon"></i>
+                </button>
+                <a href="#membership" class="hidden md:inline-block btn-primary text-sm py-2 px-5">Join Community</a>
+                <button class="lg:hidden text-2xl text-[#0F172A] dark:text-white" id="mobileMenuToggle" aria-label="Open menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+
+        <!-- ===== HERO SECTION ===== -->
+        <section id="home" class="hero-gradient min-h-screen flex items-center pt-20 md:pt-24 section-padding">
+            <div class="container-custom grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left -->
+                <div data-aos="fade-up" data-aos-duration="800">
+                    <span class="inline-block bg-[#E11D48]/10 text-[#E11D48] dark:bg-[#E11D48]/20 dark:text-[#F59E0B] text-xs font-semibold px-4 py-1.5 rounded-full mb-5 tracking-wide">
+                        <i class="fas fa-globe-americas mr-1.5"></i> International Relationship Wellness Community
+                    </span>
+                    <h1 class="font-poppins font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-[1.1] tracking-tight text-[#0F172A] dark:text-white">
+                        Building Meaningful <br />
+                        <span class="gradient-text">Human Connections</span> <br />
+                        Beyond Boundaries
+                    </h1>
+                    <p class="text-lg sm:text-xl text-[#475569] dark:text-[#94a3b8] mt-5 max-w-lg leading-relaxed">
+                        Helping people discover emotional wellness, authentic relationships, and deeper human connections through psychology, podcasts, articles, and community support.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <a href="#membership" class="btn-primary text-base">Join Premium Club</a>
+                        <a href="#podcast" class="btn-secondary text-base">Listen Podcast</a>
+                    </div>
+                </div>
+                <!-- Right: Illustration -->
+                <div data-aos="fade-left" data-aos-duration="800" class="relative flex justify-center lg:justify-end">
+                    <div class="relative w-full max-w-md aspect-square">
+                        <!-- Abstract connection nodes -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-64 h-64 rounded-full bg-[#E11D48]/5 dark:bg-[#7C3AED]/10 blur-3xl"></div>
+                        </div>
+                        <!-- Floating circles -->
+                        <div class="absolute top-[10%] left-[5%] w-20 h-20 rounded-full bg-[#E11D48]/10 dark:bg-[#7C3AED]/20 animate-bounce" style="animation-duration:3s;"></div>
+                        <div class="absolute bottom-[15%] right-[8%] w-28 h-28 rounded-full bg-[#7C3AED]/10 dark:bg-[#E11D48]/20 animate-bounce" style="animation-duration:3.6s; animation-delay:0.4s;"></div>
+                        <div class="absolute top-[30%] right-[15%] w-16 h-16 rounded-full bg-[#F59E0B]/10 dark:bg-[#F59E0B]/20 animate-pulse"></div>
+                        <!-- Center illustration: people connecting -->
+                        <div class="relative z-10 flex flex-col items-center justify-center h-full">
+                            <div class="flex items-center gap-4 md:gap-6">
+                                <div class="w-20 h-20 md:w-28 md:h-28 rounded-full bg-[#E11D48]/20 flex items-center justify-center text-4xl md:text-5xl shadow-xl backdrop-blur-sm border border-white/30">
+                                    👤
+                                </div>
+                                <div class="text-3xl md:text-4xl text-[#E11D48] animate-pulse">❤️</div>
+                                <div class="w-20 h-20 md:w-28 md:h-28 rounded-full bg-[#7C3AED]/20 flex items-center justify-center text-4xl md:text-5xl shadow-xl backdrop-blur-sm border border-white/30">
+                                    👤
+                                </div>
+                            </div>
+                            <div class="mt-6 flex gap-8 text-sm font-medium text-[#475569] dark:text-[#94a3b8]">
+                                <span><i class="fas fa-heart text-[#E11D48] mr-1"></i> 50K+</span>
+                                <span><i class="fas fa-globe text-[#7C3AED] mr-1"></i> 100+</span>
+                            </div>
+                            <div class="mt-4 px-6 py-2 glass rounded-full text-xs font-semibold text-[#0F172A] dark:text-white">
+                                🌍 Connecting hearts worldwide
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== STATS SECTION ===== -->
+        <section class="section-padding bg-white dark:bg-[#0B1120] border-y border-[#f1f5f9] dark:border-[#1e293b]">
+            <div class="container-custom">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div data-aos="fade-up" data-aos-delay="0">
+                        <div class="stat-number" id="stat1">0</div>
+                        <p class="text-sm font-medium text-[#475569] dark:text-[#94a3b8] mt-1">Community Members</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <div class="stat-number" id="stat2">0</div>
+                        <p class="text-sm font-medium text-[#475569] dark:text-[#94a3b8] mt-1">Countries Reached</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <div class="stat-number" id="stat3">0</div>
+                        <p class="text-sm font-medium text-[#475569] dark:text-[#94a3b8] mt-1">Articles Published</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="300">
+                        <div class="stat-number" id="stat4">0</div>
+                        <p class="text-sm font-medium text-[#475569] dark:text-[#94a3b8] mt-1">Podcast Listeners</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ABOUT FOUNDER ===== -->
+        <section id="about" class="section-padding bg-[#F8FAFC] dark:bg-[#0F172A]">
+            <div class="container-custom grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left: Image -->
+                <div data-aos="fade-right" data-aos-duration="700" class="relative">
+                    <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white/50 dark:border-[#1e293b]/50">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=750&fit=crop&crop=center&auto=format" alt="Kota RJ Pawan - Founder" class="w-full h-full object-cover" loading="lazy" />
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 glass rounded-2xl px-6 py-4 shadow-xl border border-white/30 dark:border-[#1e293b]/30">
+                        <div class="flex items-center gap-4">
+                            <span class="text-3xl">🏆</span>
+                            <div>
+                                <p class="text-xs font-medium text-[#475569] dark:text-[#94a3b8]">15+ Years</p>
+                                <p class="text-sm font-bold text-[#0F172A] dark:text-white">Experience</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Content -->
+                <div data-aos="fade-left" data-aos-duration="700">
+                    <span class="text-[#E11D48] dark:text-[#F59E0B] font-semibold text-sm tracking-wider uppercase">Founder</span>
+                    <h2 class="font-poppins font-bold text-3xl sm:text-4xl mt-2 text-[#0F172A] dark:text-white">
+                        Kota RJ Pawan
+                    </h2>
+                    <p class="text-lg font-medium text-[#7C3AED] dark:text-[#A78BFA] mt-1">International Relationship Psychologist</p>
+                    <p class="text-[#475569] dark:text-[#94a3b8] mt-4 leading-relaxed">
+                        With over 15 years of experience in relationship psychology and emotional wellness, Kota RJ Pawan has helped thousands of individuals and couples build authentic, lasting connections. As a podcast host, author, and community founder, he's dedicated to making emotional wellness accessible worldwide.
+                    </p>
+                    <div class="grid grid-cols-3 gap-4 mt-6">
+                        <div class="glass-card rounded-xl p-4 text-center">
+                            <span class="text-2xl">🧠</span>
+                            <p class="text-xs font-semibold mt-1 text-[#0F172A] dark:text-white">Psychologist</p>
+                        </div>
+                        <div class="glass-card rounded-xl p-4 text-center">
+                            <span class="text-2xl">🎙️</span>
+                            <p class="text-xs font-semibold mt-1 text-[#0F172A] dark:text-white">Podcast Host</p>
+                        </div>
+                        <div class="glass-card rounded-xl p-4 text-center">
+                            <span class="text-2xl">🌍</span>
+                            <p class="text-xs font-semibold mt-1 text-[#0F172A] dark:text-white">Community Founder</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-3 mt-8">
+                        <a href="#" class="btn-primary text-sm">Read More</a>
+                        <a href="#" class="btn-secondary text-sm">Watch Interview</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CORE PILLARS ===== -->
+        <section id="community" class="section-padding bg-white dark:bg-[#0B1120]">
+            <div class="container-custom">
+                <div class="text-center max-w-2xl mx-auto" data-aos="fade-up">
+                    <span class="text-[#E11D48] dark:text-[#F59E0B] font-semibold text-sm tracking-wider uppercase">Core Pillars</span>
+                    <h2 class="font-poppins font-bold text-3xl sm:text-4xl mt-2 text-[#0F172A] dark:text-white">
+                        The Foundation of <span class="gradient-text">True Connection</span>
+                    </h2>
+                    <p class="text-[#475569] dark:text-[#94a3b8] mt-3">Six pillars that guide our mission to build a world where feelings truly matter.</p>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+                    <!-- Pillar 1 -->
+                    <div class="glass-card rounded-2xl p-6 text-center" data-aos="fade-up" data-aos-delay="0">
+                        <div class="pillar-icon">🧠</div>
+                        <h3 class="text-xl font-bold mt-3 text-[#0F172A] dark:text-white">Emotional Wellness</h3>
+                        <p class="text-sm text-[#475569] dark:text-[#94a3b8] mt-1">Cultivate self-awareness and emotional intelligence for healthier relationships.</p>
+                    </div>
+                    <!-- Pillar 2 -->
+                    <div class="glass-card rounded-2xl p-6 text-center" data-aos="fade-up" data-aos-delay="80">
+                        <div class="pillar-icon">❤️</div>
+                        <h3 class="text-xl font-bold mt-3 text-[#0F172A] dark:text-white">Healthy Relationships</h3>
+                        <p class="text-sm text-[#475569] dark:text-[#94a3b8] mt-1">Build trust, communication, and intimacy with evidence-based guidance.</p>
+                    </div>
+                    <!-- Pillar 3 -->
+                    <div class="glass-card rounded-2xl p-6 text-center" data-aos="fade-up" data-aos-delay="160">
+                        <div class="pillar-icon">🌍</div>
+                        <h3 class="text-xl font-bold mt-3 text-[#0F172A] dark:text-white">Global Community</h3>
+                        <p class="text-sm text-[#475569] dark:text-[#94a3b8] mt-1">Connect with like-minded souls across 100+ countries, united by love.</p>
+                    </div>
+                    <!-- Pillar 4 -->
+                    <div class="glass-card rounded-2xl p-6 text-center" data-aos="fade-up" data-aos-delay="240">
+                        <div class="pillar-icon">🎙️</div>
+                        <h3 class="text-xl font-bold mt-3 text-[#0F172A] dark:text-white">LoveTalk Podcast</h3>
+                        <p class="text-sm text-[#475569] dark:text-[#94a3b8] mt-1">Weekly conversations on love, psychology, and emotional growth.</p>
+                    </div>
+                    <!-- Pillar 5 -->
+                    <div class="glass-card rounded-2xl p-6 text-center" data-aos="fade-up" data-aos-delay="320">
+                        <div class="pillar-icon">📚</div>
+                        <h3 class="text-xl font-bold mt-3 text-[#0F172A] dark:text-white">Education &amp; Research</h3>
+                        <p class="text-sm text-[#475569] dark:text-[#94a3b8] mt-1">Science-backed articles, workshops, and resources for lifelong learning.</p>
+                    </div>
+                    <!-- Pillar 6 -->
+                    <div class="glass-card rounded-2xl p-6 text-center" data-aos="fade-up" data-aos-delay="400">
+                        <div class="pillar-icon">🤝</div>
+                        <h3 class="text-xl font-bold mt-3 text-[#0F172A] dark:text-white">Human Connection</h3>
+                        <p class="text-sm text-[#475569] dark:text-[#94a3b8] mt-1">Authentic, vulnerable, and transformative connections that change lives.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FEATURED ARTICLES ===== -->
+        <section id="articles" class="section-padding bg-[#F8FAFC] dark:bg-[#0F172A]">
+            <div class="container-custom">
+                <div class="flex flex-wrap items-end justify-between gap-4" data-aos="fade-up">
+                    <div>
+                        <span class="text-[#E11D48] dark:text-[#F59E0B] font-semibold text-sm tracking-wider uppercase">Articles</span>
+                        <h2 class="font-poppins font-bold text-3xl sm:text-4xl mt-1 text-[#0F172A] dark:text-white">
+                            Insights for <span class="gradient-text">Emotional Growth</span>
+                        </h2>
+                    </div>
+                    <div class="flex flex-wrap gap-2" id="filterTabs">
+                        <button class="filter-tab active" data-filter="all">All</button>
+                        <button class="filter-tab" data-filter="relationships">Relationships</button>
+                        <button class="filter-tab" data-filter="psychology">Psychology</button>
+                        <button class="filter-tab" data-filter="health">Health</button>
+                        <button class="filter-tab" data-filter="lovestories">Love Stories</button>
+                        <button class="filter-tab" data-filter="community">Community</button>
+                    </div>
+                </div>
+
+                <!-- Article Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10" id="articleGrid">
+                    <!-- Article 1 -->
+                    <div class="glass-card rounded-2xl overflow-hidden group" data-category="relationships" data-aos="fade-up" data-aos-delay="0">
+                        <div class="aspect-[16/10] overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=400&h=250&fit=crop&crop=center&auto=format" alt="Relationships" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center gap-3 text-xs text-[#475569] dark:text-[#94a3b8]">
+                                <span class="font-semibold text-[#E11D48] dark:text-[#F59E0B]">Relationships</span>
+                                <span>•</span>
+                                <span>Jan 15, 2026</span>
+                            </div>
+                            <h3 class="text-lg font-bold mt-2 text-[#0F172A] dark:text-white">5 Keys to Building Trust in Any Relationship</h3>
+                            <p class="text-sm text-[#475569] dark:text-[#94a3b8] mt-1 line-clamp-2">Trust is the foundation of every meaningful connection. Learn the psychology behind building and rebuilding trust.</p>
+                            <a href="#" class="inline-flex items-center gap-1 mt-3 text-sm font-semibold text-[#E11D48] dark:text-[#F59E0B] hover:gap-2 transition-all">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+                        </div>
+                    </div>
+                    <!-- Article 2 -->
+                    <div class="glass-card rounded-2xl overflow-hidden group" data-category="psychology" data-aos="fade-up" data-aos-delay="100">
+                        <div class="aspect-[16/10] overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=250&fit=crop&crop=center&auto=format" alt="Psychology" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center gap-3 text-xs text-[#475569] dark:text-[#94a3b8]">
+                                <span class="font-semibold text-[#E11D48] dark:text-[#F59E0B]">Psychology</span>
+                                <span>•</span>
+                                <span>Jan 10, 2026</span>
+                            </div>
+                            <h3 class="text-lg font-bold mt-2 text-[#0F172A] dark:text-white">The Science of Emotional Attachment Styles</h3>
+                            <p class="text-sm text-[#475569] dark:text-[#94a3b8] mt-1 line-clamp-2">Understanding your attachment style can transform how you approach relationships. Here's what the research says.</p>
+                            <a href="#" class="inline-flex items-center gap-1 mt-3 text-sm font-semibold text-[#E11D48] dark:text-[#F59E0B] hover:gap-2 transition-all">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+                        </div>
+                    </div>
+                    <!-- Article 3 -->
+                    <div class="glass-card rounded-2xl overflow-hidden group" data-category="lovestories" data-aos="fade-up" data-aos-delay="200">
+                        <div class="aspect-[16/10] overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400&h=250&fit=crop&crop=center&auto=format" alt="Love Stories" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center gap-3 text-xs text-[#475569] dark:text-[#94a3b8]">
+                                <span class="font-semibold text-[#E11D48] dark:text-[#F59E0B]">Love Stories</span>
+                                <span>•</span>
+                                <span>Jan 5, 2026</span>
+                            </div>
+                            <h3 class="text-lg font-bold mt-2 text-[#0F172A] dark:text-white">From Strangers to Soulmates: A True Story</h3>
+                            <p class="text-sm text-[#475569] dark:text-[#94a3b8] mt-1 line-clamp-2">How two people from different continents found love against all odds, and what we can learn from their journey.</p>
+                            <a href="#" class="inline-flex items-center gap-1 mt-3 text-sm font-semibold text-[#E11D48] dark:text-[#F59E0B] hover:gap-2 transition-all">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Search bar -->
+                <div class="mt-10 flex justify-center" data-aos="fade-up">
+                    <div class="relative w-full max-w-md">
+                        <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-[#94a3b8]"></i>
+                        <input type="text" id="articleSearch" placeholder="Search articles..." class="w-full pl-11 pr-4 py-3 rounded-full border border-[#e2e8f0] dark:border-[#334155] bg-white/70 dark:bg-[#1e293b]/70 backdrop-blur-sm text-[#0F172A] dark:text-white placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#E11D48] dark:focus:ring-[#7C3AED] transition" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== LOVETALK PODCAST ===== -->
+        <section id="podcast" class="section-padding bg-[#0F172A] text-white relative overflow-hidden">
+            <!-- Background accent -->
+            <div class="absolute top-0 right-0 w-96 h-96 bg-[#E11D48]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+            <div class="absolute bottom-0 left-0 w-80 h-80 bg-[#7C3AED]/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
+
+            <div class="container-custom relative z-10">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div data-aos="fade-right">
+                        <span class="text-[#F59E0B] font-semibold text-sm tracking-wider uppercase flex items-center gap-2">
+                            <i class="fas fa-microphone"></i> LoveTalk Podcast
+                        </span>
+                        <h2 class="font-poppins font-bold text-3xl sm:text-4xl mt-2">
+                            Conversations That <span class="gradient-gold">Matter</span>
+                        </h2>
+                        <p class="text-[#94a3b8] mt-3 leading-relaxed max-w-md">
+                            Tune in weekly for deep, honest conversations about love, relationships, and emotional wellness with experts and real people.
+                        </p>
+                        <div class="flex flex-wrap gap-4 mt-6">
+                            <a href="#" class="btn-primary text-sm">Listen Now</a>
+                            <a href="#" class="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-white/20 transition">All Episodes</a>
+                        </div>
+                        <!-- Platforms -->
+                        <div class="flex gap-4 mt-6 text-2xl text-[#94a3b8]">
+                            <a href="#" class="hover:text-[#F59E0B] transition" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+                            <a href="#" class="hover:text-[#F59E0B] transition" aria-label="Apple Podcasts"><i class="fab fa-apple"></i></a>
+                            <a href="#" class="hover:text-[#F59E0B] transition" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="#" class="hover:text-[#F59E0B] transition" aria-label="Google Podcasts"><i class="fab fa-google"></i></a>
+                        </div>
+                    </div>
+                    <!-- Podcast Player Card -->
+                    <div data-aos="fade-left" class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl">
+                        <div class="flex items-start gap-4">
+                            <div class="w-20 h-20 rounded-xl bg-gradient-to-br from-[#E11D48] to-[#7C3AED] flex items-center justify-center text-3xl flex-shrink-0">
+                                🎙️
+                            </div>
+                            <div>
+                                <p class="text-xs font-medium text-[#F59E0B]">EPISODE 48</p>
+                                <h3 class="text-lg font-bold">The Art of Emotional Intimacy</h3>
+                                <p class="text-sm text-[#94a3b8]">with Dr. Sarah Mitchell • 42 min</p>
+                            </div>
+                        </div>
+                        <!-- Audio wave -->
+                        <div class="mt-6 flex items-center gap-4">
+                            <button class="w-12 h-12 rounded-full bg-[#E11D48] flex items-center justify-center text-white hover:scale-105 transition">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <div class="podcast-wave flex-1">
+                                <span></span><span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                            <span class="text-xs text-[#94a3b8]">42:00</span>
+                        </div>
+                        <p class="text-sm text-[#94a3b8] mt-4 leading-relaxed">
+                            "In this episode, we explore how vulnerability and emotional awareness create the deepest connections in relationships."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PREMIUM MEMBERSHIP ===== -->
+        <section id="membership" class="section-padding bg-white dark:bg-[#0B1120]">
+            <div class="container-custom">
+                <div class="text-center max-w-2xl mx-auto" data-aos="fade-up">
+                    <span class="text-[#F59E0B] font-semibold text-sm tracking-wider uppercase flex items-center justify-center gap-2">
+                        <i class="fas fa-crown"></i> Premium Membership
+                    </span>
+                    <h2 class="font-poppins font-bold text-3xl sm:text-4xl mt-2 text-[#0F172A] dark:text-white">
+                        Elevate Your <span class="gradient-gold">Emotional Journey</span>
+                    </h2>
+                    <p class="text-[#475569] dark:text-[#94a3b8] mt-3">Unlock exclusive resources, live sessions, and a global community of like-minded souls.</p>
+                </div>
+
+                <div class="max-w-md mx-auto mt-12" data-aos="flip-up" data-aos-duration="800">
+                    <div class="relative glass-card rounded-3xl p-8 border-2 border-[#F59E0B]/30 shadow-2xl shadow-[#F59E0B]/5">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#F59E0B] text-[#0F172A] text-xs font-bold px-4 py-1.5 rounded-full">Best Value</div>
+                        <div class="text-center">
+                            <span class="text-sm font-medium text-[#475569] dark:text-[#94a3b8]">Monthly</span>
+                            <div class="mt-2">
+                                <span class="text-5xl font-extrabold text-[#0F172A] dark:text-white">$19</span>
+                                <span class="text-[#475569] dark:text-[#94a3b8]">/mo</span>
+                            </div>
+                            <p class="text-sm text-[#475569] dark:text-[#94a3b8] mt-1">Billed monthly. Cancel anytime.</p>
+                        </div>
+                        <ul class="mt-6 space-y-3 text-sm">
+                            <li class="flex items-center gap-3 text-[#0F172A] dark:text-white"><i class="fas fa-check-circle text-[#F59E0B]"></i> Exclusive Community Access</li>
+                            <li class="flex items-center gap-3 text-[#0F172A] dark:text-white"><i class="fas fa-check-circle text-[#F59E0B]"></i> Relationship Resources Library</li>
+                            <li class="flex items-center gap-3 text-[#0F172A] dark:text-white"><i class="fas fa-check-circle text-[#F59E0B]"></i> Live Weekly Sessions</li>
+                            <li class="flex items-center gap-3 text-[#0F172A] dark:text-white"><i class="fas fa-check-circle text-[#F59E0B]"></i> Premium Podcast Episodes</li>
+                            <li class="flex items-center gap-3 text-[#0F172A] dark:text-white"><i class="fas fa-check-circle text-[#F59E0B]"></i> Exclusive Events Access</li>
+                            <li class="flex items-center gap-3 text-[#0F172A] dark:text-white"><i class="fas fa-check-circle text-[#F59E0B]"></i> E-books &amp; Guides</li>
+                        </ul>
+                        <a href="#" class="btn-primary w-full text-center mt-8 block text-base">Join Premium Membership</a>
+                        <p class="text-xs text-center text-[#475569] dark:text-[#94a3b8] mt-3">30-day money-back guarantee</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TESTIMONIALS ===== -->
+        <section class="section-padding bg-[#F8FAFC] dark:bg-[#0F172A]">
+            <div class="container-custom">
+                <div class="text-center max-w-2xl mx-auto" data-aos="fade-up">
+                    <span class="text-[#E11D48] dark:text-[#F59E0B] font-semibold text-sm tracking-wider uppercase">Testimonials</span>
+                    <h2 class="font-poppins font-bold text-3xl sm:text-4xl mt-2 text-[#0F172A] dark:text-white">
+                        Real Stories, <span class="gradient-text">Real Impact</span>
+                    </h2>
+                </div>
+                <div class="testimonial-slider mt-10" id="testimonialSlider">
+                    <!-- Card 1 -->
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
+                        <div class="flex items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&h=60&fit=crop&crop=center&auto=format" alt="Sarah" class="w-12 h-12 rounded-full object-cover" loading="lazy" />
+                            <div>
+                                <p class="font-bold text-[#0F172A] dark:text-white text-sm">Sarah M.</p>
+                                <p class="text-xs text-[#475569] dark:text-[#94a3b8]">🇺🇸 United States</p>
+                            </div>
+                        </div>
+                        <div class="flex text-[#F59E0B] text-sm mt-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-sm text-[#475569] dark:text-[#94a3b8] mt-2 leading-relaxed">"This community changed my perspective on love and connection. I've grown more in 6 months than in years of therapy."</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=center&auto=format" alt="James" class="w-12 h-12 rounded-full object-cover" loading="lazy" />
+                            <div>
+                                <p class="font-bold text-[#0F172A] dark:text-white text-sm">James K.</p>
+                                <p class="text-xs text-[#475569] dark:text-[#94a3b8]">🇬🇧 United Kingdom</p>
+                            </div>
+                        </div>
+                        <div class="flex text-[#F59E0B] text-sm mt-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-sm text-[#475569] dark:text-[#94a3b8] mt-2 leading-relaxed">"The LoveTalk Podcast is my weekly dose of wisdom. Every episode leaves me with a new insight about myself."</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=center&auto=format" alt="Priya" class="w-12 h-12 rounded-full object-cover" loading="lazy" />
+                            <div>
+                                <p class="font-bold text-[#0F172A] dark:text-white text-sm">Priya R.</p>
+                                <p class="text-xs text-[#475569] dark:text-[#94a3b8]">🇮🇳 India</p>
+                            </div>
+                        </div>
+                        <div class="flex text-[#F59E0B] text-sm mt-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-sm text-[#475569] dark:text-[#94a3b8] mt-2 leading-relaxed">"I found my tribe here. The sense of belonging and emotional safety is something I've never experienced anywhere else."</p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=center&auto=format" alt="David" class="w-12 h-12 rounded-full object-cover" loading="lazy" />
+                            <div>
+                                <p class="font-bold text-[#0F172A] dark:text-white text-sm">David L.</p>
+                                <p class="text-xs text-[#475569] dark:text-[#94a3b8]">🇦🇺 Australia</p>
+                            </div>
+                        </div>
+                        <div class="flex text-[#F59E0B] text-sm mt-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-sm text-[#475569] dark:text-[#94a3b8] mt-2 leading-relaxed">"The articles and resources are top-tier. I've recommended TrueLove18Club to all my friends looking for real connection."</p>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="flex items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=60&h=60&fit=crop&crop=center&auto=format" alt="Maria" class="w-12 h-12 rounded-full object-cover" loading="lazy" />
+                            <div>
+                                <p class="font-bold text-[#0F172A] dark:text-white text-sm">Maria G.</p>
+                                <p class="text-xs text-[#475569] dark:text-[#94a3b8]">🇪🇸 Spain</p>
+                            </div>
+                        </div>
+                        <div class="flex text-[#F59E0B] text-sm mt-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-sm text-[#475569] dark:text-[#94a3b8] mt-2 leading-relaxed">"Emotional wellness is no longer a luxury—it's a necessity. This platform makes it accessible to everyone."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== COMMUNITY GALLERY ===== -->
+        <section id="gallery" class="section-padding bg-white dark:bg-[#0B1120]">
+            <div class="container-custom">
+                <div class="text-center max-w-2xl mx-auto" data-aos="fade-up">
+                    <span class="text-[#E11D48] dark:text-[#F59E0B] font-semibold text-sm tracking-wider uppercase">Gallery</span>
+                    <h2 class="font-poppins font-bold text-3xl sm:text-4xl mt-2 text-[#0F172A] dark:text-white">
+                        Moments of <span class="gradient-text">Connection</span>
+                    </h2>
+                </div>
+                <div class="masonry-grid mt-10">
+                    <div class="masonry-item row-span-2" data-aos="fade-up" data-aos-delay="0">
+                        <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=300&h=400&fit=crop&crop=center&auto=format" alt="Community event" loading="lazy" />
+                        <div class="overlay">Global Meetup 2025</div>
+                    </div>
+                    <div class="masonry-item" data-aos="fade-up" data-aos-delay="50">
+                        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=300&h=250&fit=crop&crop=center&auto=format" alt="Podcast recording" loading="lazy" />
+                        <div class="overlay">Podcast Studio</div>
+                    </div>
+                    <div class="masonry-item row-span-2" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=300&h=400&fit=crop&crop=center&auto=format" alt="Member stories" loading="lazy" />
+                        <div class="overlay">Member Stories</div>
+                    </div>
+                    <div class="masonry-item" data-aos="fade-up" data-aos-delay="150">
+                        <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=300&h=250&fit=crop&crop=center&auto=format" alt="Workshop" loading="lazy" />
+                        <div class="overlay">Workshop Session</div>
+                    </div>
+                    <div class="masonry-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=300&h=250&fit=crop&crop=center&auto=format" alt="Love stories" loading="lazy" />
+                        <div class="overlay">Love Stories</div>
+                    </div>
+                    <div class="masonry-item" data-aos="fade-up" data-aos-delay="250">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=300&h=250&fit=crop&crop=center&auto=format" alt="Connection" loading="lazy" />
+                        <div class="overlay">Human Connection</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== NEWSLETTER ===== -->
+        <section id="contact" class="section-padding bg-[#F8FAFC] dark:bg-[#0F172A]">
+            <div class="container-custom max-w-2xl mx-auto text-center" data-aos="fade-up">
+                <span class="text-[#E11D48] dark:text-[#F59E0B] font-semibold text-sm tracking-wider uppercase">Newsletter</span>
+                <h2 class="font-poppins font-bold text-3xl sm:text-4xl mt-2 text-[#0F172A] dark:text-white">
+                    Get Weekly <span class="gradient-text">Emotional Wellness</span> Insights
+                </h2>
+                <p class="text-[#475569] dark:text-[#94a3b8] mt-3">Join 50,000+ subscribers who receive weekly wisdom on love, connection, and emotional growth.</p>
+
+                <form class="mt-8 flex flex-col sm:flex-row gap-3 max-w-md mx-auto" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email" required class="flex-1 px-5 py-3 rounded-full border border-[#e2e8f0] dark:border-[#334155] bg-white/70 dark:bg-[#1e293b]/70 backdrop-blur-sm text-[#0F172A] dark:text-white placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#E11D48] dark:focus:ring-[#7C3AED] transition" />
+                    <button type="submit" class="btn-primary text-sm py-3 px-6">Subscribe</button>
+                </form>
+
+                <div class="newsletter-success mt-6 items-center justify-center gap-2 text-[#0F172A] dark:text-white">
+                    <i class="fas fa-check-circle text-[#E11D48] text-xl"></i>
+                    <span class="font-medium">You're in! Check your inbox for a welcome message.</span>
+                </div>
+                <p class="text-xs text-[#475569] dark:text-[#94a3b8] mt-3">No spam. Unsubscribe anytime.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-[#0F172A] text-[#94a3b8] pt-16 pb-6">
+        <div class="container-custom">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Brand -->
+                <div>
+                    <a href="#home" class="flex items-center gap-2 text-xl font-bold font-poppins text-white no-underline">
+                        <span class="text-[#E11D48] text-2xl">❤️</span>
+                        TrueLove<span class="text-[#E11D48]">18</span>Club
+                    </a>
+                    <p class="text-sm mt-3 max-w-xs">Where Feelings Matter — Building meaningful human connections across the globe.</p>
+                    <div class="flex gap-3 mt-4 text-lg">
+                        <a href="#" class="hover:text-[#E11D48] transition" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="hover:text-[#E11D48] transition" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-[#E11D48] transition" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="hover:text-[#E11D48] transition" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="hover:text-[#E11D48] transition" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#" class="hover:text-[#E11D48] transition" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="hover:text-[#E11D48] transition" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" class="hover:text-[#E11D48] transition" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm uppercase tracking-wider">Quick Links</h4>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="#about" class="hover:text-white transition">About</a></li>
+                        <li><a href="#podcast" class="hover:text-white transition">Podcast</a></li>
+                        <li><a href="#articles" class="hover:text-white transition">Articles</a></li>
+                        <li><a href="#membership" class="hover:text-white transition">Membership</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Resources -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm uppercase tracking-wider">Resources</h4>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition">E-books</a></li>
+                        <li><a href="#" class="hover:text-white transition">Workshops</a></li>
+                        <li><a href="#" class="hover:text-white transition">Community Guidelines</a></li>
+                        <li><a href="#" class="hover:text-white transition">FAQ</a></li>
+                    </ul>
+                </div>
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm uppercase tracking-wider">Get in Touch</h4>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><i class="fas fa-envelope mr-2 text-[#E11D48]"></i> hello@truelove18club.com</li>
+                        <li><i class="fas fa-globe mr-2 text-[#E11D48]"></i> www.truelove18club.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2 text-[#E11D48]"></i> International</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Bottom bar -->
+            <div class="border-t border-[#1e293b] mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-sm">
+                <p>© 2026 TrueLove18Club International. All rights reserved.</p>
+                <p class="text-[#E11D48] font-medium">Where Feelings Matter ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+
+    <!-- Main Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // ---- AOS Init ----
+            AOS.init({
+                duration: 600,
+                easing: 'ease-out-cubic',
+                once: true,
+                offset: 40,
+            });
+
+            // ---- Dark Mode ----
+            const darkToggle = document.getElementById('darkToggle');
+            const darkIcon = document.getElementById('darkIcon');
+            const body = document.body;
+
+            // Check localStorage
+            if (localStorage.getItem('darkMode') === 'true') {
+                body.classList.add('dark');
+                darkIcon.className = 'fas fa-sun';
+            }
+
+            darkToggle.addEventListener('click', function() {
+                body.classList.toggle('dark');
+                const isDark = body.classList.contains('dark');
+                localStorage.setItem('darkMode', isDark);
+                darkIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+            });
+
+            // ---- Mobile Menu ----
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuToggle = document.getElementById('mobileMenuToggle');
+            const menuClose = document.getElementById('mobileMenuClose');
+            const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+            function openMenu() { mobileMenu.classList.add('open');
+                document.body.style.overflow = 'hidden'; }
+
+            function closeMenu() { mobileMenu.classList.remove('open');
+                document.body.style.overflow = ''; }
+
+            menuToggle.addEventListener('click', openMenu);
+            menuClose.addEventListener('click', closeMenu);
+            mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+            // Close on escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
+            });
+
+            // ---- Back to Top ----
+            const backBtn = document.getElementById('backToTop');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 400) {
+                    backBtn.classList.add('visible');
+                } else {
+                    backBtn.classList.remove('visible');
+                }
+            });
+            backBtn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // ---- Stats Counter ----
+            const stats = [
+                { id: 'stat1', target: 50000, suffix: '+' },
+                { id: 'stat2', target: 100, suffix: '+' },
+                { id: 'stat3', target: 500, suffix: '+' },
+                { id: 'stat4', target: 1000, suffix: '+' },
+            ];
+
+            let counted = false;
+
+            function animateCounters() {
+                if (counted) return;
+                const rect = document.getElementById('stat1')?.getBoundingClientRect();
+                if (!rect || rect.top > window.innerHeight) return;
+
+                counted = true;
+                stats.forEach(stat => {
+                    const el = document.getElementById(stat.id);
+                    if (!el) return;
+                    let current = 0;
+                    const step = Math.ceil(stat.target / 60);
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= stat.target) {
+                            current = stat.target;
+                            clearInterval(timer);
+                        }
+                        el.textContent = current.toLocaleString() + stat.suffix;
+                    }, 25);
+                });
+            }
+
+            // Run on scroll
+            window.addEventListener('scroll', animateCounters);
+            // Also run after a small delay in case already visible
+            setTimeout(animateCounters, 500);
+
+            // ---- Article Filter ----
+            const filterTabs = document.querySelectorAll('.filter-tab');
+            const articles = document.querySelectorAll('#articleGrid .glass-card');
+
+            filterTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    filterTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.dataset.filter;
+                    articles.forEach(article => {
+                        const cat = article.dataset.category;
+                        if (filter === 'all' || cat === filter) {
+                            article.style.display = 'block';
+                            article.style.opacity = '1';
+                            article.style.transform = 'scale(1)';
+                            setTimeout(() => { article.style.transition =
+                                'all 0.3s ease'; }, 50);
+                        } else {
+                            article.style.opacity = '0';
+                            article.style.transform = 'scale(0.94)';
+                            setTimeout(() => { article.style.display = 'none'; }, 300);
+                        }
+                    });
+                });
+            });
+
+            // ---- Article Search ----
+            const searchInput = document.getElementById('articleSearch');
+            searchInput.addEventListener('input', function() {
+                const query = this.value.toLowerCase().trim();
+                articles.forEach(article => {
+                    const title = article.querySelector('h3')?.textContent?.toLowerCase() || '';
+                    const desc = article.querySelector('p')?.textContent?.toLowerCase() || '';
+                    const match = title.includes(query) || desc.includes(query);
+                    if (query === '' || match) {
+                        article.style.display = 'block';
+                        article.style.opacity = '1';
+                        article.style.transform = 'scale(1)';
+                    } else {
+                        article.style.opacity = '0';
+                        article.style.transform = 'scale(0.94)';
+                        setTimeout(() => { article.style.display = 'none'; }, 300);
+                    }
+                });
+            });
+
+            // ---- Newsletter ----
+            const newsletterForm = document.getElementById('newsletterForm');
+            const successMsg = document.querySelector('.newsletter-success');
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                if (email) {
+                    successMsg.classList.add('show');
+                    this.reset();
+                    setTimeout(() => {
+                        successMsg.classList.remove('show');
+                    }, 5000);
+                }
+            });
+
+            // ---- Smooth anchor scroll (enhance) ----
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        const offset = 80;
+                        const top = target.getBoundingClientRect().top + window.pageYOffset -
+                            offset;
+                        window.scrollTo({ top, behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // ---- Lazy load images (native) ----
+            if ('loading' in HTMLImageElement.prototype) {
+                document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                    img.src = img.src;
+                });
+            }
+
+            // ---- Header blur on scroll ----
+            const header = document.getElementById('mainHeader');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 20) {
+                    header.classList.add('shadow-sm');
+                } else {
+                    header.classList.remove('shadow-sm');
+                }
+            });
+
+        });
+    </script>
+
+</body>
+</html>
